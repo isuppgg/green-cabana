@@ -1,0 +1,634 @@
+:root{
+    --color-nav: #231918;
+    --color-container: #fffcf9;
+    --color-footer: #e4e2e2;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url(../FuturaPTLight.otf);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Futura PT', serif;
+}
+
+#open-menu{
+    display: none;
+}
+
+.nav__social-media{
+    display: none;
+}
+
+.images__container a{
+    width: 100%;
+    height: 100%;
+}
+
+/*----------- NAVIGATION -----------  */
+
+.call-us{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+    background: #fff;
+}
+
+.nav{
+    position: fixed;
+    top: 20px;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: background .3s;
+}
+
+.new-nav{
+    background: var(--color-nav);
+}
+
+#logo-nav__container{
+    margin-left: 50px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-nav{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.nav-menu{    
+    width: 100%;
+    margin: 25px 0;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.nav-menu__item{
+    margin-right: 45px;
+    text-decoration: none;
+    font-family: 'Work Sans', serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+
+/*================         ==============
+  ----------------  INDEX  --------------
+  ================         ==============*/
+
+
+/*----------- HEADER -----------*/
+
+.header-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.header::before{
+    content: "";
+    background-image: url(../img/greencabana.jpg);
+    background-size: cover;
+    background-position-y: center;
+    filter: brightness(.7);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: show 1s forwards;
+}
+
+
+/*----------- MAIN -----------*/
+.main{
+    font-size: 1.125em;
+    background: var(--color-container);
+}
+
+.grid__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 100vh);
+    overflow: hidden;
+}
+/*----------- Valores predeterminados de las cajas, textos e imágenes -----------*/
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.images__container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.images{
+    width: 100%;
+    height: 100%;
+}
+.texts{
+    padding-top: 0;
+    margin: auto;
+    opacity: 0;
+}
+
+.title{
+    font-size: 2.1875em;
+    font-weight: bold;
+}
+
+.text{
+    font-size: 1.125em;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.button{
+    opacity: 0;
+    padding: 8px;
+    margin-top: 25px;
+    width: 30%;
+    text-align: center;
+    border: 1px solid var(--color-nav);
+    cursor: pointer;
+    transition: background .3s;
+    text-decoration: none;
+    color: #000;
+    letter-spacing: 1px;
+    background-color: #ffffff;
+}
+
+.button__right{
+    transform: translateX(100%);
+}
+
+.button__left{
+    transform: translateX(-100%);
+}
+
+.button:hover{
+    background-color: #000;
+    color: #ffffff;
+}
+
+.button:active{
+    background-color: #000;
+    color: #ffffff;
+}
+
+
+
+
+
+/*----------- Alineación y modifación de elementos uno por uno -----------*/
+
+.about-us{
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+}
+.about-us__texts{
+    transform: translateX(50%);
+}
+.texts--move{  
+    animation: move .8s forwards;
+}
+
+.about-us-img{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.coffes{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.coffees__texts{    
+    transform: translateX(-50%);
+}
+
+.coffees-img{
+    grid-column: 2 / -1;
+    grid-row: 2 / 3;
+}
+
+.food{
+    grid-column: 2 / -1;
+    grid-row: 3 / 4;
+}
+
+.food-img{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.food__texts{
+    transform: translateX(50%);
+}
+
+.desserts{
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+}
+
+.desserts__texts{
+    transform: translate(-50%)
+}
+
+.desserts-img{
+    grid-column: 2 / -1;
+    grid-row: 4 / 5;
+}
+
+.div{
+    width: 90%;
+    margin: auto;
+    height: 2px;
+    background: var(--color-nav);
+    opacity: 0;
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+}
+
+.div{
+    margin: 100px auto;
+    width: 90%;
+    height: 2px;
+}
+
+#green-cabana{
+    font-style: italic;
+}
+
+.pet-friendly{
+    margin-top: 70px;
+}
+
+.content-pet__container{
+    flex-direction: row;
+    width: 75%;
+    justify-content: center;
+}
+
+#dato{
+    font-size: 1.25em;
+}
+
+.pet__text{
+    margin: auto 40px auto 40px;
+    text-align: center;
+    opacity: 0;
+}
+
+.pet-img__container{
+    width: 14.375em;
+    height: 14.375em;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(-150%);
+}
+
+.pet__img{
+    width: 100%;
+    height: 100%;
+}
+
+/* ----- slogan ----- */
+.slogan__container{
+    padding-bottom: 50px;
+}
+
+#slogan{
+    text-align: center;
+    font-size: 1.25em;
+    letter-spacing: 1px;
+    color: #4b4747;
+    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+    opacity: 0;
+}
+
+/* ------ Footer ------- */
+.footer{
+    width: 100%;
+    height: 100%;
+    background: var(--color-footer);
+}
+
+.footer-flex__container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ubication{
+    grid-column: 2 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.ubication__container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 75px;
+}
+
+.schedule{
+    list-style: none;
+}
+
+.footer__div{
+    width: 90%;
+    margin: 45px auto;
+    height: 2px;
+    background-color: var(--color-nav);
+    opacity: 1;
+}
+
+.footer__social-media{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 4%;
+    margin: auto;
+    padding-bottom: 25px;
+}
+
+.footer__social-media__item{
+    fill: #000;
+}
+
+.content-bazar__container{
+    flex-direction: row-reverse;
+}
+
+.bazar__text{
+    padding-left: 25px;
+}
+
+/*================               ==============
+  ----------------  Animaciones  --------------
+  ================               ==============*/
+
+
+@keyframes show {
+    to{
+        opacity: 1;
+    }
+}
+@keyframes move {   
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+/*================                 ==============
+  ----------------  Media queries  --------------
+  ================                 ==============*/
+
+/*----------- Tablet -----------*/
+
+
+@media screen and (max-width: 800px){
+    body{
+        font-size: 12px;
+    }
+    .grid__container{
+        grid-template-rows: repeat(4, 70vh);
+
+    }
+    .header::before{
+        background-position-x: center;
+        background-position-y: 0;
+    }
+    .content-bazar__container{
+        flex-direction: column;    
+    }
+
+    .div{
+        margin: 60px auto;
+    }
+
+    .bazar__img{
+        margin: 1.25em auto 0 auto;
+        width: 80%;
+    }
+
+    .bazar__text{
+        padding: 0;
+    }
+    .content-pet__container{
+        flex-direction: column-reverse;
+        width: 75%;
+        justify-content: center;
+        align-items: center;
+    }
+    .pet__text{
+        margin: 1.25em auto 0 auto ;
+    }
+
+    .slogan__container{
+        padding-bottom: 30px;
+    }
+}
+
+
+/*----------- Celular -----------*/
+
+@media screen and (max-width: 450px){
+    body{
+        font-size: 9px;
+    }
+    /*----Mostrar social media ---- */
+    #logo-nav__container{
+        display: none;
+    }
+    .nav{
+        justify-content:space-between;
+    }
+    .nav-menu__item{
+        font-size: 12px;
+    }
+    .nav__social-media{
+        display: initial;
+        margin-bottom: 50px;
+    }
+    .social-media__item{
+        fill: #fff;
+    }
+    .grid__container{
+        display: flex;
+        flex-direction: column;
+    }
+    .header-container{
+        width: 100vw;
+        height: 100vh;
+    }
+    .header::before{
+        background-position-x: center;
+        background-position-y: 0;
+    }
+    .nav{
+        flex-direction: column-reverse;
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100%;
+        flex-direction: column;
+        width: initial;
+        transform: translateX(100%);
+        transition: transform .3s ease-out;
+        background: var(--color-nav);
+    }
+    .show-menu{
+        transform: translateX(0);
+    }
+    .nav-menu{
+        flex-direction: column-reverse;
+        height: 50%;
+        justify-content: space-evenly;
+        margin-top: 40px;
+    }
+    .nav-menu__item{
+        text-align: right;
+        margin: 0 1.25em;
+        
+    }
+    #open-menu{
+        display: initial;
+        position: fixed;
+        top: 20px;
+        right: 10px;
+        z-index: 10;
+        fill: #ffffff;
+        transition: fill .3s ease-out;
+    }
+    /*---- Main -----*/
+
+
+    .container{
+        margin: 30px 0;
+    }
+
+    .images__container{
+        height: 65vh;
+    }
+
+    
+    .about-us-img{
+        order: 1;
+        margin: 0 0 30px 0;
+    }
+
+    .about-us{
+        order: 2;
+    }
+    .coffees-img{
+        order: 3;
+    }
+
+    .coffees{
+        order: 4;
+    }
+
+    .food-img{
+        order: 5;
+    }
+
+    .food{
+        order: 6;
+    }
+
+    .desserts-img{
+        order: 7;
+    }
+
+    .desserts{
+        order: 8;
+    }
+
+    .div{
+        margin: 1.25em auto;
+    }
+
+   
+    .slogan__container{
+        margin-bottom: 0;
+    }
+
+    /*---- Footer -----*/
+
+
+    .footer-flex__container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .footer__div{
+        margin: 1.25em auto;
+    }
+
+   .footer__social-media{
+        width: 100%;
+        justify-content: center;
+   }
+
+   .footer__social-media__item{
+        fill: #000;
+    }
+}
+
+@media screen and (max-width: 350px){
+
+    .header-container{
+        height: 88vh;
+    }
+    .images__container{
+        height: 55vh;
+    }
+}
+
